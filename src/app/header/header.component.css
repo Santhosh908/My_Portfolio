@@ -1,0 +1,13 @@
+.pad-style{
+    margin-left: 60%;
+}
+.custom-btn {
+    /* padding: 5px 5px; */
+    position: relative;
+    left: 75%;
+  }
+.scrollable-nav {
+    max-height: 200px; 
+    overflow-y: auto;
+  }
+  
