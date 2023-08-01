@@ -54,20 +54,17 @@ export class HomeComponent implements OnInit {
       }
     }
     
-  // scrollToTarget() {
-  //   // this.router.navigate([], {
-  //   //   fragment: 'targetComponentRef',
-  //   //   // Optionally, you can use 'anchorScrolling: true' to enable smooth scrolling
-  //   //   // anchorScrolling: true
-  //   // });
-  //   console.log('targetComponentRef:', this.targetComponentRef);
-  // if (this.targetComponentRef) {
-  //   console.log('Scrolling...');
-  //   this.targetComponentRef.nativeElement.scrollIntoView({ behavior: 'smooth' });
-  // } else {
-  //   console.log('targetComponentRef is not available');
-  // }
-  // }
+  @ViewChild('targetComponentRef1', { static: false }) targetComponentRef1!: ElementRef;
+
+
+  ngAfterViewInit() {
+    this.sharedScrollService.scrollTarget$.subscribe((targetId: string) => {
+      if (targetId === 'targetComponentRef1' && this.targetComponentRef1) {
+        this.targetComponentRef1.nativeElement.scrollIntoView({ behavior: 'smooth' });
+      }
+    });
+  
+}
   scrollToTarget() {
     this.sharedScrollService.scrollTo('targetComponentRef');
   }
@@ -79,5 +76,8 @@ export class HomeComponent implements OnInit {
   }
   scrollToTarget4(){
     this.sharedScrollService.scrollTo('targetComponentRef4');
+  }
+  scrollToTarget5(){
+    this.sharedScrollService.scrollTo('targetComponentRef5');
   }
   }

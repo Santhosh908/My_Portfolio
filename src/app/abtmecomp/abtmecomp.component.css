@@ -1,7 +1,7 @@
 #carouselExampleControls {
     width: 50%;
     height: 50%;
-    margin: 0 auto; /* Center the carousel horizontally */
+    margin: 0 auto; 
 
     /* background: linear-gradient(135deg, #F8F8F8, #ECECEC); */
     border: 1px solid #f3f1f1;
@@ -38,7 +38,18 @@
   }
   .edit{
     padding-top:10px;
-    padding-bottom: 10px;
+    padding-bottom: 5px;
     align-items:center;
     justify-content: center;
+    border-radius: 4px;
+  }
+  .body{
+    padding-top: 5%;
+    padding-bottom: 5%;
+    align-items: center;
+    justify-content: center;
+  }
+  .carousel-item active,.carousel-item{
+    padding-top: 10%;
+    padding-bottom: 10%;
   }

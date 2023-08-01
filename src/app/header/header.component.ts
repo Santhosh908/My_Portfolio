@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { SharedScrollService } from '../shared-scroll.service';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private sharedScrollService: SharedScrollService) { }
 
   ngOnInit(): void {
   }
-
+  scrollToTarget1() {
+    this.sharedScrollService.scrollTo('targetComponentRef1');
+  }
 }
